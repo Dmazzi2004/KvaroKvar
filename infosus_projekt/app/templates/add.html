@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dodaj kvar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>Dodaj novi kvar</h2>
+    <form id="addKvarForm">
+      <div class="mb-3">
+        <label for="naziv" class="form-label">Naziv kvara</label>
+        <input type="text" class="form-control" id="naziv" name="naziv" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="kategorija" class="form-label">Kategorija</label>
+        <select class="form-select" id="kategorija" name="kategorija" required>
+          <option value="" disabled selected>Odaberi kategoriju</option>
+          <option value="Elektrika">Elektrika</option>
+          <option value="Voda">Voda</option>
+          <option value="Građevina">Građevina</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="datum" class="form-label">Datum kvara</label>
+        <input type="date" class="form-control" id="datum" name="datum" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="opis" class="form-label">Opis kvara</label>
+        <textarea class="form-control" id="opis" name="opis" rows="3" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Dodaj kvar</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('addKvarForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const data = {
+        naziv: this.naziv.value,
+        kategorija: this.kategorija.value,
+        datum: this.datum.value,
+        opis: this.opis.value
+      };
+
+      console.log('Podaci za slanje:', data);
+
+      // Ovdje možeš dodati fetch/post request prema backendu
+      // fetch('/api/kvarovi', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+      //   .then(response => response.json())
+      //   .then(result => alert('Kvar dodan!'))
+      //   .catch(err => alert('Greška: ' + err));
+    });
+  </script>
+</body>
+</html>
