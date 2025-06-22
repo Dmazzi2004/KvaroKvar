@@ -1,9 +1,13 @@
 # KvaroKvar
 ## Dokumentacija: Sustav za upravljanje kvarovima u zgradama
 Ovaj projekt je web-aplikacija za evidenciju i upravljanje kvarovima u zgradama. Aplikacija Omogućuje:
+
 -dodavanje prijava kvarova
+
 -pregled i filtriranje po statusu ili datumu
+
 -ažuriranje statusa kvara
+
 -vizualizaciju statistike kvarova po statusu
 
 Aplikacija koristi Python, Flask, PonyORM, SQLite na backendu, te HTML i Chart.js na frontend dijelu. Sve je upakirano u Docker kontejner preko kojega se odvija pokretanje.
